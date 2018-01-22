@@ -96,6 +96,16 @@ public class ProductsController : Controller
   }
 }
 ```
+```fsharp
+[<Route("api/[controller]")>]
+type ProductsController() =
+    inherit Controller() 
+    
+    [<HttpGet("{id}")>]
+    member this.GetProduct(id: int) = 
+        ...
+        this.View()
+```
 
 ### Model binding
 
